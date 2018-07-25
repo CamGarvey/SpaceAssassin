@@ -3,7 +3,7 @@ import processing.sound.*;
 PFont font;
 int grid;
 Assassin assassin;
-int numberOfAliens = 1;
+int numberOfAliens = 36;
 int maxLives = 3;
 int lives = maxLives;
 GameState gameState = GameState.MENU;
