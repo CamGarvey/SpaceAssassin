@@ -1,3 +1,4 @@
+//This class creates an object of the main ship the user controls
 class Assassin extends Ship {
 
   boolean leftDown = false;
@@ -15,6 +16,7 @@ class Assassin extends Ship {
   }
 
   public void update() {
+    //If user is holding down any arrow keys then leftDown/rightDown is to true and move method is called
     if (leftDown){
       move(-speed);
     }
