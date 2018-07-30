@@ -1,3 +1,4 @@
+//This class creates a group of aliens, keeps track of each one and their bullets
 class AlienGroup {
 
   ArrayList<Alien> aliens;
@@ -31,6 +32,7 @@ class AlienGroup {
     return false;
   }
 
+  
   void updateAllAliens() {
     for (int i = 0; i < aliens.size(); i++) {
       showAllAliens(i);
@@ -73,7 +75,7 @@ class AlienGroup {
 
 
 
-
+  //Checks if alien hits any shields, if it did then bullet is removed
   void alienHitShields(Shield[] shields) {
     for (Shield s : shields) {
       for (int i = alienBullets.size()-1; i >= 0; i--) {
