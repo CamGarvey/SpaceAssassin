@@ -7,7 +7,7 @@ class Ship {
   PImage img;
   boolean dead = false;
   int timer;
-  int timerInterval = 1000;
+  int timerInterval = 1000; // Sets waiting timne for timer
 
   public Ship(int x, int y, PImage img) {
     this.pos.x = x;
@@ -24,6 +24,7 @@ class Ship {
     image(img, pos.x, pos.y, w, h);
   }
 
+  ////collision detection against any ship
   boolean hit(Ship s) {
     for (Bullet b : bullets) {
       if (b.pos.x + b.bulletSize/2 > s.pos.x &&
@@ -37,7 +38,7 @@ class Ship {
     return false;
   }
   
-  
+  //collision detection against shields
   boolean hit(Shield s) {
     for (Bullet b : bullets) {
       for (int i = 0; i < s.rects.size(); i++) {
@@ -54,6 +55,7 @@ class Ship {
     return false;
   }
   
+  //if time is up return true
   boolean checkTimer(){
     if (millis() > timer + timerInterval){
        return true; 
@@ -61,6 +63,8 @@ class Ship {
     return false;
   }
   
+  //starts timer
+  //alien or assassin is hit
   void startTimer() {
     timer = millis();
     dead = true;
