@@ -10,7 +10,7 @@ class Bullet {
     pos.x = x + (grid/ 2);
     pos.y = y;
     this.speed = speed;
-    this.img = img;
+    this.img = img; // since some bullets have different images a PImage is passed
   }
 
 
@@ -23,6 +23,7 @@ class Bullet {
   }
 
 
+  //collision detection against any ship
   boolean hit(Ship s) {
     if (pos.x + bulletSize/2 > s.pos.x &&
         pos.x - bulletSize/2 < s.pos.x + s.w &&
@@ -33,6 +34,7 @@ class Bullet {
     return false;
   }
   
+  //collision detection against shields
   boolean hit(Shield s) {
       for (int i = 0; i < s.rects.size(); i++) {
         if (pos.x + bulletSize/2 > s.rects.get(i).pos.x &&
