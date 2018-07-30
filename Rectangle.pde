@@ -1,3 +1,4 @@
+//This class is used to create a rectangle object used by shields
 class Rectangle {
 
   PVector pos = new PVector();
