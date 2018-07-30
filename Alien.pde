@@ -1,16 +1,17 @@
+//This class creates an Alien Object
 class Alien extends Ship {
 
-  boolean dir = true;
-  float steps = 0;
-  float maxSteps = 65;
-  int downCount = 0;
+  boolean dir = true; //Checks if going left or right
+  float steps = 0; // Steps to the left or right
+  float maxSteps = 65; //How many step an alien can move
+  int downCount = 0; // How far down alien has gone down
   int maxDownCount = 20;
-  float downSpeed;
-  float leftRightSpeed;
+  float downSpeed; // How fast aliens move down
+  float leftRightSpeed; //How fast aliens move left and right
   int points;
 
 
-
+  
   public Alien(int x, int y, PImage img, int points, float downSpeed, float leftRightSpeed) {
     super(x, y, img);
     this.points = points;
@@ -25,6 +26,7 @@ class Alien extends Ship {
       steps = 0;
       dir = !dir;
     }
+    //Checks if going right(dir == true) then moves right, else goes left
     if (dir) {
       pos.x += leftRightSpeed;
       steps++;
@@ -42,7 +44,7 @@ class Alien extends Ship {
 
 
 
-
+  //Shoots bullets towards assassin
   void shoot(Assassin ship) {
     if (shootCount >= shootRate) {
       if (ship.pos.x + ship.w >= pos.x && ship.pos.x <= this.pos.x + this.w) {
