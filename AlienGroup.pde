@@ -37,6 +37,8 @@ class AlienGroup {
     for (int i = 0; i < aliens.size(); i++) {
       showAllAliens(i);
       update(i);
+      //Checks if alien has been shot, if it has then timer is checked.
+      //if timer is up, then alien is removed
       if (aliens.get(i).dead){
         if (aliens.get(i).checkTimer()){
           aliens.remove(i);
