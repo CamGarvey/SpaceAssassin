@@ -1,10 +1,10 @@
 class Shield {
 
   PVector pos = new PVector();
-  int amountOfRect = 40;
-  float rectSize = 5;
+  int amountOfRect = 40; // Sets max amount of rect that makes up shields
+  float rectSize = 5; //sets size of each rect
   ArrayList<Rectangle> rects = new ArrayList<Rectangle>();
-  int rectXMax = 10;
+  int rectXMax = 10; // sets max amount of rects on x axis
 
   public Shield(int x, int y) {
     pos.x = x;
@@ -14,10 +14,11 @@ class Shield {
     float rectXCount = 0;
     float rectY = pos.y;
     for (int i = 0; i < amountOfRect; i++) {
+      //if rect is equal to rectXMax go down on y axis
       if (rectXCount == rectXMax) {
         rectY += rectSize;
         rectX = pos.x;
-        rectXCount = 0;
+        rectXCount = 0; // reset x axis
       }
       rectX += rectSize;
       rectXCount++;
