@@ -30,6 +30,7 @@ class Assassin extends Ship {
         bullets.remove(i);
       }
     }
+    //Stops assassin going off screen
     pos.x = constrain(pos.x,0, width - w);
   }
 
